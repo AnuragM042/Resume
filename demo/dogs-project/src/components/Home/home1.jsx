@@ -45,7 +45,7 @@ function Home1() {
   console.log("Slider settings:", settings);
 
   return (
-    <div className="slider-container flex justify-center items-center w-full overflow-hidden h-auto mt-[80px] mb-[100px]">
+    <div className="slider-container bg-custom-gadient flex justify-center items-center w-full overflow-hidden h-auto mt-[80px] mb-[100px]">
       <div className="lg:w-[500px] md:w-[400px] sm:w-[250px] w-full px-2">
         <Slider {...settings}>
           <div className="flex justify-center">
