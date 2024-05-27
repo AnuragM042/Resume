@@ -40,11 +40,11 @@ const Sailing1 = () => {
          
         </div>
         {/* buttons */}
-        <div className='flex flex-wrap justify-center gap-4 mt-4 mb-4'>
-          <Button className="font-['Cambria'] bg-black p-[15px] border border-white flex items-center text-white" ripple={true}>
+        <div className='flex flex-wrap justify-center gap-4 mt-4 mb-[30px]'>
+          <Button className="font-['Cambria'] bg-black p-[15px] border border-white flex items-center text-white mb-[30px]" ripple={true}>
             BOOK NOW <MdKeyboardDoubleArrowRight className="text-xs ml-2"/>
           </Button>
-          <Button className="font-['Cambria'] bg-black p-[15px] border border-white flex items-center text-white" ripple={true}>
+          <Button className="font-['Cambria'] bg-black p-[15px] border border-white flex items-center text-white mb-[30px]" ripple={true}>
             Download Details  <MdKeyboardDoubleArrowRight className="text-xs ml-2"/>
           </Button>
           

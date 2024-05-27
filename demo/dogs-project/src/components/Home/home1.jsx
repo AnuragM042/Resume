@@ -46,7 +46,7 @@ function Home1() {
 
   return (
     <div className="slider-container bg-custom-gadient flex justify-center items-center w-full overflow-hidden h-auto mt-[80px] mb-[100px]">
-      <div className="lg:w-[500px] md:w-[400px] sm:w-[250px] w-full px-2">
+      <div className="lg:w-[500px] mt-[50px] md:w-[400px] sm:w-[250px] w-full px-2">
         <Slider {...settings}>
           <div className="flex justify-center">
             <img src={Image1} alt="Slide 1" className="object-cover rounded-xl w-full h-auto" />

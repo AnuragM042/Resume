@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.png';
+import { NavLink } from 'react-router-dom';
+import Logo from '../assets/logo2.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -11,70 +11,148 @@ const Navbar = () => {
   };
 
   return (
-    <div className='h-[100px] w-screen bg-white flex justify-center items-center fixed top-0 z-50 border-b-4 border-black'>
-      <div className='flex justify-between items-center w-full max-w-6xl px-4 bg-white'>
-        <div>
-          <img className='h-[40px] w-[150px]' src={Logo} alt="Logo" />
-        </div>
-        <ul className='hidden md:flex space-x-10'>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/">Home</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/overnight-camps">Overnight Stay</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/Sailing">Sailing</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-             <Link to="/activity">One Day Activity</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/tripindia">TripIndia</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/about">About</Link>
-          </li>
-          <li className='cursor-pointer hover:text-sky-700'>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-
-        <div onClick={handleClick} className='md:hidden z-20 cursor-pointer'>
-          {nav ? <FaTimes /> : <FaBars />}
+    <nav className="bg-slate-900 fixed h-[100px] top-0 w-full z-50">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
+          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              type="button"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded={nav ? 'true' : 'false'}
+              onClick={handleClick}
+            >
+              <span className="sr-only">Open main menu</span>
+              {nav ? (
+                <FaTimes className="block h-6 w-6" />
+              ) : (
+                <FaBars className="block h-6 w-6" />
+              )}
+            </button>
+          </div>
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex flex-shrink-0 items-center">
+              <img className="h-8 w-auto" src={Logo} alt="Logo" />
+            </div>
+            <div className="hidden sm:ml-6 sm:block">
+              <div className="flex space-x-4">
+                <NavLink
+                  exact
+                  to="/"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/overnight-camps"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Overnight Stay
+                </NavLink>
+                <NavLink
+                  to="/sailing"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Sailing
+                </NavLink>
+                <NavLink
+                  to="/activity"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  One Day Activity
+                </NavLink>
+                <NavLink
+                  to="/tripindia"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Trip India
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  activeClassName="bg-black text-white"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Contact
+                </NavLink>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <ul
-        className={
-          !nav
-            ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-slate-700 flex flex-col justify-center items-center z-10'
-        }
-      >
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/" onClick={() => setNav(false)}>Home</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/overnight-camps" onClick={() => setNav(false)}>Overnight Stay</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/Sailing" onClick={() => setNav(false)}>Sailing</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/activity" onClick={() => setNav(false)}>One Day Activiy</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/tripindia" onClick={() => setNav(false)}>Trip India</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/about" onClick={() => setNav(false)}>About</Link>
-        </li>
-        <li className='py-6 text-4xl cursor-pointer'>
-          <Link to="/contact" onClick={() => setNav(false)}></Link>
-        </li>
-      </ul>
-    </div>
+      <div className={`sm:hidden ${nav ? 'block' : 'hidden'}`} id="mobile-menu">
+        <div className="space-y-1 px-2 pb-3 bg-black pt-2">
+          <NavLink
+            exact
+            to="/"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/overnight-camps"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            Overnight Stay
+          </NavLink>
+          <NavLink
+            to="/sailing"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            Sailing
+          </NavLink>
+          <NavLink
+            to="/activity"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            One Day Activity
+          </NavLink>
+          <NavLink
+            to="/tripindia"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            Trip India
+          </NavLink>
+          <NavLink
+            to="/about"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            activeClassName="bg-black text-white"
+            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            onClick={() => setNav(false)}
+          >
+            Contact
+          </NavLink>
+        </div>
+      </div>
+    </nav>
   );
 };
 

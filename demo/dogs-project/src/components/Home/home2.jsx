@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { Button } from "@material-tailwind/react";
 import calendar from "../../assets/calendar.png"; // Fixed the path by removing extra space
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -10,11 +12,13 @@ import Logo from "../../assets/logo2.png";
 import { Link } from 'react-router-dom';
 
 function Home2() {
+  const history = useHistory(); // Use the useHistory hook to access the history object
+
   const activities = [
     {
       date: 'Saturday - May 11th',
       name: 'Summer Woofshop',
-       link : "/Reservation"
+      link: "/Reservation"
     },
     {
       date: 'Saturday - June 8th',
@@ -38,6 +42,11 @@ function Home2() {
     },
   ];
 
+  const handleClick = () => {
+    history.push("/Reservation");
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   return (
     <div className='bg-custom-gradient'>
       {/* Date and Calendar */}
@@ -49,9 +58,9 @@ function Home2() {
               <div className="text-gray-800 font-bold text-xl mb-2">{activity.date}</div>
               <div className="text-2xl">{activity.name}</div>
               {activity.link && (
-                <a href={activity.link} className="block mt-4 text-blue-500 hover:underline">
+                <Link to={activity.link} className="block mt-4 text-blue-500 hover:underline" onClick={handleClick}>
                   Book Now <MdKeyboardDoubleArrowRight />
-                </a>
+                </Link>
               )}
               <FaRegCalendarCheck className="text-gray-500 mt-2" />
             </div>
@@ -59,45 +68,52 @@ function Home2() {
         </div>
       </div>
       {/* Home2 middle section */}
-      <div className='flex flex-col md:flex-row justify-center py-5'>
+      <div className='flex flex-col  justify-center py-5'>
         <div className='px-4 mb-4 md:mb-0'>
           {/* Image 1 */}
           <img className='rounded-xl w-full max-w-[600px]' src={Image1} alt="people" />
         </div>
-        <div className='relative w-full max-w-[600px] h-[600px] md:h-auto ml-[20px]'>
+        <div className='relative w-full max-w-[600px] h-[600px] md:h-[600px] ml-[20px]'>
           {/* Image 2 as background */}
           <img className='absolute inset-0 w-full h-full object-cover rounded-xl' src={Image2} alt="background" />
           {/* Logo on top */}
           <div className='absolute inset-0 flex flex-col '>
             <img className='max-h-[90px] max-w-[80%]' src={Logo} alt="logo" />
-            <p className="text-lg mb-4 font-['Cambria']  text-white font-bold">Reconnect with your dog through various activities</p>
-             <p className="text-lg mb-4 font-['Cambria'] text-white  font-bold">With the growing number of dogs and dog parents, more and more places are becoming pet-friendly</p>
-             <p className="text-lg mb-4 font-['Cambria'] text-white  font-bold">A well-adjusted and social doggo is a prerequisite for making India pet-friendly</p>
-              <p className='flex space-x-3'>
-             <Link to="/about">
-             <Button
-               className="font-['Cambria'] bg-black border border-white p-[15px] flex justify-center content-center text-white" ripple={true}>
-                 KNOW MORE<MdKeyboardDoubleArrowRight className= "text-xs"/>
-              </Button> </Link>
-              <Button className="font-['Cambria'] border border-white  bg-black p-[15px] flex justify-center content-center text-white" ripple={true}>
-                 Check out Instagram  <MdKeyboardDoubleArrowRight className= "text-xs"/>
-              </Button>
-              </p>
-              <p className='flex mt-[10px] left-0 justify-start mb-[50px]'>
-              <Link to="/overnight-camps">
-              <p className="bg-slate-600 p-[15px] w-[130px] rounded-full cursor-pointer text-white hover:text-yellow-500"  ><FaHandPointRight size={25}  /> Camping </p>
+            <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">Reconnect with your dog through various activities</p>
+            <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">With the growing number of dogs and dog parents, more and more places are becoming pet-friendly</p>
+            <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">A well-adjusted and social doggo is a prerequisite for making India pet-friendly</p>
+            <p className='flex space-x-3'>
+              <Link to="/about">
+                <Button className="font-['Cambria'] bg-black border border-white p-[15px] flex justify-center content-center text-white" ripple={true}>
+                  KNOW MORE<MdKeyboardDoubleArrowRight className="text-xs" />
+                </Button>
               </Link>
-              <Link to="/Sailing">
-              <p className="bg-slate-600 p-[15px] w-[130px] rounded-full cursor-pointer  text-white hover:text-yellow-500"> <FaHandPointRight size={25}/> Sailing </p>
+              <Button className="font-['Cambria'] border border-white bg-black p-[15px] flex justify-center content-center text-white" ripple={true}>
+                Check out Instagram<MdKeyboardDoubleArrowRight className="text-xs" />
+              </Button>
+            </p>
+            <p className='flex mt-[10px] left-0 justify-start space-x-2 mb-[50px]'>
+              <Link to="/overnight-camps">
+                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                  <FaHandPointRight size={25} /> Camping
+                </p>
+              </Link>
+              <Link to="/sailing">
+                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                  <FaHandPointRight size={25} /> Sailing
+                </p>
               </Link>
               <Link to="/activity">
-              <p className="bg-slate-600 p-[15px] rounded-full cursor-pointer  text-white hover:text-yellow-500"><FaHandPointRight size={25} /> 1 Day Activity </p>
+                <p className="bg-slate-600 p-[15px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                  <FaHandPointRight size={25} /> 1 Day Activity
+                </p>
               </Link>
               <Link to="/tripindia">
-              <p className="bg-slate-600 p-[15px] w-[130px] rounded-full cursor-pointer  text-white hover:text-yellow-500"> <FaHandPointRight size={25} /> Trip India</p>
+                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                  <FaHandPointRight size={25} /> Trip India
+                </p>
               </Link>
-              </p>
-            
+            </p>
           </div>
         </div>
       </div>

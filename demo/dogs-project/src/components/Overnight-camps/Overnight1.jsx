@@ -36,7 +36,7 @@ const Overnight1 = () => {
         </div>
         {/* buttons */}
      <div>
-     <div className='flex flex-wrap justify-center gap-4 mt-4 space-y-[15px]'>
+     <div className='flex flex-wrap justify-center gap-4  mb-[30px] mt-4 space-y-[15px]'>
           <Button className="font-['Cambria'] bg-black p-[15px] flex items-center border border-white text-white" ripple={true}>
             Check now  <MdKeyboardDoubleArrowRight className="text-xs ml-2"/>
           </Button>
