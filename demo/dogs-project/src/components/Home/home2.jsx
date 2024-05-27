@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { Button } from "@material-tailwind/react";
 import calendar from "../../assets/calendar.png"; // Fixed the path by removing extra space
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -9,10 +8,10 @@ import { FaHandPointRight } from "react-icons/fa";
 import Image1 from "../../assets/Home2-1.jpg";
 import Image2 from "../../assets/Home2-2.png";
 import Logo from "../../assets/logo2.png";
-
+import { Link } from 'react-router-dom';
 
 function Home2() {
- 
+  
 
   const activities = [
     {
@@ -43,8 +42,6 @@ function Home2() {
   ];
 
 
-
-
   return (
     <div className='bg-custom-gradient'>
       {/* Date and Calendar */}
@@ -56,7 +53,7 @@ function Home2() {
               <div className="text-gray-800 font-bold text-xl mb-2">{activity.date}</div>
               <div className="text-2xl">{activity.name}</div>
               {activity.link && (
-                <Link to={activity.link} className="block mt-4 text-blue-500 hover:underline" >
+                <Link to={activity.link} className="block mt-4 text-blue-500 hover:underline">
                   Book Now <MdKeyboardDoubleArrowRight />
                 </Link>
               )}
@@ -66,12 +63,12 @@ function Home2() {
         </div>
       </div>
       {/* Home2 middle section */}
-      <div className='flex flex-col  justify-center py-5'>
+      <div className='flex flex-col md:flex-row justify-center py-5'>
         <div className='px-4 mb-4 md:mb-0'>
           {/* Image 1 */}
           <img className='rounded-xl w-full max-w-[600px]' src={Image1} alt="people" />
         </div>
-        <div className='relative w-full max-w-[600px] h-[600px] md:h-[600px] ml-[20px]'>
+        <div className='relative w-full max-w-[600px] h-[600px] md:h-auto ml-[20px]'>
           {/* Image 2 as background */}
           <img className='absolute inset-0 w-full h-full object-cover rounded-xl' src={Image2} alt="background" />
           {/* Logo on top */}
