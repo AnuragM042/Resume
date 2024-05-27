@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom'; // Import useHistory from react-router-dom
+import { Link } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { Button } from "@material-tailwind/react";
 import calendar from "../../assets/calendar.png"; // Fixed the path by removing extra space
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -12,7 +12,7 @@ import Logo from "../../assets/logo2.png";
 
 
 function Home2() {
-  const history = useHistory(); // Use the useHistory hook to access the history object
+ 
 
   const activities = [
     {
@@ -42,10 +42,8 @@ function Home2() {
     },
   ];
 
-  const handleClick = () => {
-    history.push("/Reservation");
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  };
+
+
 
   return (
     <div className='bg-custom-gradient'>
@@ -58,7 +56,7 @@ function Home2() {
               <div className="text-gray-800 font-bold text-xl mb-2">{activity.date}</div>
               <div className="text-2xl">{activity.name}</div>
               {activity.link && (
-                <Link to={activity.link} className="block mt-4 text-blue-500 hover:underline" onClick={handleClick}>
+                <Link to={activity.link} className="block mt-4 text-blue-500 hover:underline" >
                   Book Now <MdKeyboardDoubleArrowRight />
                 </Link>
               )}
