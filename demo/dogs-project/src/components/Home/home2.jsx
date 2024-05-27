@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
+import { useHistory, Link } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { Button } from "@material-tailwind/react";
 import calendar from "../../assets/calendar.png"; // Fixed the path by removing extra space
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -9,7 +9,7 @@ import { FaHandPointRight } from "react-icons/fa";
 import Image1 from "../../assets/Home2-1.jpg";
 import Image2 from "../../assets/Home2-2.png";
 import Logo from "../../assets/logo2.png";
-import { Link } from 'react-router-dom';
+
 
 function Home2() {
   const history = useHistory(); // Use the useHistory hook to access the history object
