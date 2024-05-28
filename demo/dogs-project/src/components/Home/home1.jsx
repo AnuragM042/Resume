@@ -9,24 +9,25 @@ import Image4 from "../../assets/slider-4.jpg";
 import "./home1.css";
 
 function Home1() {
-  console.log("Home1 component is rendering");
-
   const settings = {
     dots: true,
-    dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
+    autoplay: true,  
+    autoplaySpeed: 5000, 
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
           infinite: true,
           dots: true,
-          arrows: true,  // Ensure arrows are shown
+          arrows: true,
         }
       },
       {
@@ -34,32 +35,30 @@ function Home1() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
           infinite: true,
           dots: true,
-          arrows: true,  // Ensure arrows are shown
+          arrows: true,
         }
       }
     ]
   };
 
-  console.log("Slider settings:", settings);
-
   return (
-    <div className="slider-container bg-custom-gadient flex justify-center items-center w-full overflow-hidden h-auto mt-[80px] mb-[100px]">
-      <div className="lg:w-[500px] mt-[50px] md:w-[400px] sm:w-[250px] w-full px-2">
+    <div className="bg-custom-gradient flex justify-center items-start w-full lg:h-[800px] sm:h-[900px]  mt-[50px]">
+      <div className="lg:w-[800px] md:h-[800px] sm:w-full sm:h-auto w-full h-auto px-2 pt-10 pb-16 mt-[50px]">
         <Slider {...settings}>
           <div className="flex justify-center">
-            <img src={Image1} alt="Slide 1" className="object-cover rounded-xl w-full h-auto" />
-            {console.log("Image 1 loaded")}
+            <img src={Image1} alt="Slide 1" className="slider-image object-cover rounded-xl w-full md:h-[700px] h-[600px]" />
           </div>
           <div className="flex justify-center">
-            <img src={Image2} alt="Slide 2" className="object-cover rounded-xl w-full h-auto" />
+            <img src={Image2} alt="Slide 2" className="slider-image object-cover rounded-xl w-full md:h-[700px] h-[600px]" />
           </div>
           <div className="flex justify-center">
-            <img src={Image3} alt="Slide 3" className="object-cover rounded-xl w-full h-auto" />
+            <img src={Image3} alt="Slide 3" className="slider-image object-cover rounded-xl w-full md:h-[700px] h-[600px]" />
           </div>
           <div className="flex justify-center">
-            <img src={Image4} alt="Slide 4" className="object-cover rounded-xl w-full h-auto" />
+            <img src={Image4} alt="Slide 4" className="slider-image object-cover rounded-xl w-full md:h-[700px] h-[600px]" />
           </div>
         </Slider>
       </div>

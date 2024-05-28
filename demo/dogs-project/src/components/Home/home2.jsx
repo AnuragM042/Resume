@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@material-tailwind/react";
 import calendar from "../../assets/calendar.png"; // Fixed the path by removing extra space
@@ -47,9 +46,10 @@ function Home2() {
       {/* Date and Calendar */}
       <div className="container mx-auto p-4 flex flex-col items-center justify-center">
         <img className='h-[150px] w-[150px]' src={calendar} alt="Calendar" />
-        <div className="flex flex-wrap justify-center gap-4 mt-5">
+        {/* Cards */}
+        <div className="flex sm:justify-center   w-screen flex-row flex-wrap   gap-4 mt-5">
           {activities.map((activity, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md w-[200px] transform transition duration-300 hover:shadow-lg hover:scale-110">
+            <div key={index} className="bg-white p-4 rounded-lg shadow-md sm:w-[250px] w-[150px] transform transition duration-300 hover:shadow-lg hover:scale-110">
               <div className="text-gray-800 font-bold text-xl mb-2">{activity.date}</div>
               <div className="text-2xl">{activity.name}</div>
               {activity.link && (
@@ -68,15 +68,15 @@ function Home2() {
           {/* Image 1 */}
           <img className='rounded-xl w-full max-w-[600px]' src={Image1} alt="people" />
         </div>
-        <div className='relative w-full max-w-[600px] h-[600px] md:h-auto ml-[20px]'>
+        <div className='relative w-full max-w-[600px] h-[600px]  '>
           {/* Image 2 as background */}
           <img className='absolute inset-0 w-full h-full object-cover rounded-xl' src={Image2} alt="background" />
           {/* Logo on top */}
           <div className='absolute inset-0 flex flex-col '>
             <img className='max-h-[90px] max-w-[80%]' src={Logo} alt="logo" />
-            <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">Reconnect with your dog through various activities</p>
+            <p className="text-lg mb-4 font-['Georgia'] text-white font-bold">Reconnect with your dog through various activities</p>
             <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">With the growing number of dogs and dog parents, more and more places are becoming pet-friendly</p>
-            <p className="text-lg mb-4 font-['Cambria'] text-white font-bold">A well-adjusted and social doggo is a prerequisite for making India pet-friendly</p>
+            <p className="text-lg mb-4 font-['Merriweather'] text-white font-bold">A well-adjusted and social doggo is a prerequisite for making India pet-friendly</p>
             <p className='flex space-x-3'>
               <Link to="/about">
                 <Button className="font-['Cambria'] bg-black border border-white p-[15px] flex justify-center content-center text-white" ripple={true}>
@@ -87,24 +87,24 @@ function Home2() {
                 Check out Instagram<MdKeyboardDoubleArrowRight className="text-xs" />
               </Button>
             </p>
-            <p className='flex mt-[10px] left-0 justify-start space-x-2 mb-[50px]'>
+            <p className='flex mt-[10px] flex-wrap gap-2 left-0 justify-start space-x-2 mb-[50px]'>
               <Link to="/overnight-camps">
-                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                <p className="bg-slate-600 font-['Cambria'] text-xl p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
                   <FaHandPointRight size={25} /> Camping
                 </p>
               </Link>
               <Link to="/sailing">
-                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                <p className="bg-slate-600  font-['Cambria'] text-xl p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
                   <FaHandPointRight size={25} /> Sailing
                 </p>
               </Link>
               <Link to="/activity">
-                <p className="bg-slate-600 p-[15px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                <p className="bg-slate-600 font-['Cambria'] text-xl p-[15px] rounded-full cursor-pointer text-white hover:text-yellow-500">
                   <FaHandPointRight size={25} /> 1 Day Activity
                 </p>
               </Link>
               <Link to="/tripindia">
-                <p className="bg-slate-600 p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
+                <p className="bg-slate-600 font-['Cambria'] text-xl p-[15px] w-[110px] rounded-full cursor-pointer text-white hover:text-yellow-500">
                   <FaHandPointRight size={25} /> Trip India
                 </p>
               </Link>

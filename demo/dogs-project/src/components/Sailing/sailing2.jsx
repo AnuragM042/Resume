@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Image1 from '../../assets/sailing2-1.jpg';
-import Image2 from '../../assets/sailing2-2.webp';
-import Image3 from '../../assets/sailing2-3.jpg';
-import Image4 from '../../assets/sailing2-4.jpg';
-import Image5 from '../../assets/sailing2-5.jpg';
-import Image6 from '../../assets/sailing2-6.jpg';
-import Image7 from '../../assets/sailing2-7.jpg';
-import Image8 from '../../assets/sailing2-8.jpg';
-import Image9 from '../../assets/sailing2-9.jpg';
-import Image10 from '../../assets/sailing2-10.jpg';
+import Image1 from '../../assets/tripindia2-1.jpg'
+import Image2 from '../../assets/tripindia2-2.jpg'
+import Image3 from '../../assets/tripindia2-3.webp'
+import Image4 from '../../assets/tripindia2-4.webp'
+import Image5 from '../../assets/tripindia2-5.webp'
+import Image6 from '../../assets/tripindia2-6.webp'
+import Image7 from '../../assets/tripindia2-4.webp';
 import { Accordion, AccordionItem } from '../Accordion';
 
 const Sailing2 = () => {
@@ -56,19 +53,15 @@ const Sailing2 = () => {
 
   return (
     <div className='bg-custom-gradient'>
-      <div className="slider-container  flex flex-col" onMouseLeave={handleSliderMouseLeave}>
+       <div className="slider-container flex flex-col">
         <div className="lg:px-[200px] justify-evenly sm:px-[50px]">
           <Slider {...settings}>
-            {[Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10].map((image, index) => (
-              <div
-                key={index}
-                className={`px-2 transition-transform duration-500 ${activeImage === index ? 'scale-120' : ''}`}
-                onClick={() => handleImageClick(index)}
-              >
+            {[Image2, Image3, Image4, Image5, Image6, Image7].map((image, index) => (
+              <div key={index} className="px-2 transition-transform duration-500">
                 <img
                   src={image}
                   alt={`Slide ${index + 2}`}
-                  className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-lg cursor-pointer"
+                  className="w-full h-[300px] object-cover rounded-lg cursor-pointer"
                 />
               </div>
             ))}

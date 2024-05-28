@@ -1,0 +1,22 @@
+/* Home4.css */
+.slick-slider {
+    overflow: hidden;
+  }
+  
+  .slick-track {
+    display: flex !important;
+  }
+  
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+  }
+  
+  .slick-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  

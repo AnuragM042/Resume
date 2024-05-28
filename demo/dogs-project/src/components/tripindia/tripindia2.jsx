@@ -53,25 +53,21 @@ const Tripindia2 = () => {
   
     return (
       <div className='bg-custom-gradient'>
-        <div className="slider-container  flex flex-col" onMouseLeave={handleSliderMouseLeave}>
-          <div className="lg:px-[200px] justify-evenly sm:px-[50px]">
-            <Slider {...settings}>
-              {[Image2, Image3, Image4, Image5, Image6,Image7].map((image, index) => (
-                <div
-                  key={index}
-                  className={`px-2 transition-transform duration-500 ${activeImage === index ? 'scale-120' : ''}`}
-                  onClick={() => handleImageClick(index)}
-                >
-                  <img
-                    src={image}
-                    alt={`Slide ${index + 2}`}
-                    className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-lg cursor-pointer"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
+        <div className="slider-container flex flex-col">
+        <div className="lg:px-[200px] justify-evenly sm:px-[50px]">
+          <Slider {...settings}>
+            {[Image2, Image3, Image4, Image5, Image6, Image7].map((image, index) => (
+              <div key={index} className="px-2 transition-transform duration-500">
+                <img
+                  src={image}
+                  alt={`Slide ${index + 2}`}
+                  className="w-full h-[300px] object-cover rounded-lg cursor-pointer"
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
+      </div>
   
         {/* Accordion Section */}
         <div className="flex-1 mt-10 ">

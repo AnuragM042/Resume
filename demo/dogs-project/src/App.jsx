@@ -1,5 +1,6 @@
+// App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home0 from './components/Home0';
 import Overnightcamps0 from './components/Overnight-camps0';
 import Sailing0 from './components/Sailing0';
@@ -8,11 +9,12 @@ import TripInida0 from './components/TripInida0';
 import About0 from './components/About0';
 import Contact0 from './components/Contact0';
 import Mainreservation from './components/Mainreservation';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <Router>
-      <div className='h-screen w-screen bg-custom-gradient'>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home0 />} />
           <Route path="/overnight-camps" element={<Overnightcamps0 />} />
@@ -23,7 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact0 />} />
           <Route path="/Reservation" element={<Mainreservation />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 }
